@@ -23,7 +23,8 @@ export const Rick = {
   name: 'Rick Sanchez',
   species: 'Human',
   gender: 'Male',
-  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+  // 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+  image:'https://i.gifer.com/origin/19/196b0b9b030e0f42b0a62d372185742f.gif'
 }
 
 export default characters
