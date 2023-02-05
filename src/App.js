@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Cards from './components/Cards.jsx'
+import Form from './components/Form.jsx';
 import Nav from './components/Nav.jsx'
 
 import GlobalStyles from './styles/GlobalStyles'
@@ -26,7 +27,10 @@ function App () {
   return (
     <>
     <GlobalStyles/>
+
     <div className='App' style={{ padding: '25px' }}>
+      
+        <Form />
     
         <Nav onSearch={onSearch}/>
       
