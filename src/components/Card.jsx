@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Figurita=styled.div`
 border:3px solid green;
@@ -40,9 +41,12 @@ export default function Card(props) {
  
    return (
       <Figurita>
-         <button onClick={props.onClose}>X</button>
-         <img  src={props.image} alt="{props.name}" /> 
-         <h2 class='name'>{props.name}</h2>
+         <button onClick={props.onClose(props.id)}>X</button>
+         
+         <img  src={props.image} alt={props.name}/> 
+         <Link to={`/detail/${props.id}`}>
+               <h2 class='name'>{props.name}</h2>
+         </Link>
          <h2 class='specie'>{props.species}</h2>
          <h2 class='genero'>{props.gender}</h2>
          

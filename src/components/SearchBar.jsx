@@ -1,25 +1,12 @@
 import { useState } from "react";
-export default function SearchBar({onSearch}) {
+export default function SearchBar({onSearch,random}) {
 
    const [character,setCharacter]=useState('');
-  // const [input, setInput] = useState('');
 
-   /*const takeChangeInput = (e) => {
-       setInput(e.target.value);
-   } */
    const handleChange = (e)=>{
       setCharacter(e.target.value);
-      /*e.target.value='';
-      console.log(e.preventDefault());*/
-
    }
-   
-   /*const limpiarInput = (e)=>{e.target.value='';
-         
-            
-}*/
-   
-   
+      
    return (
       <div>
          <input 
@@ -31,6 +18,12 @@ export default function SearchBar({onSearch}) {
                onClick={()=>onSearch(character)}
       >
         Agregar
+      
+      </button> 
+      <button 
+               onClick={()=>random()}
+      >
+        Agregar random
       
       </button> 
       </div>

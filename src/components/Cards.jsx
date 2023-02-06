@@ -29,28 +29,30 @@ export default function Cards(props) {
    let i=0;
    if(!characters){
       return <h1>No hay Personajes disponibles</h1>
+   }else{
+      return (
+         <ContieneTarjeta >   
+           <ContieneFiguritas>
+              
+              {characters.map((character)=>(
+                 <Card
+                    onClose={props.onClose}
+                    key={i++}
+                    name={character.name}
+                    species={character.species}
+                    gender={character.gender}
+                    image={character.image}
+                    id={character.id}
+                 />
+              )
+              
+                 
+              )}
+                   
+        
+           </ContieneFiguritas>  
+         </ContieneTarjeta>
+           );
    }
-   return (
- <ContieneTarjeta >   
-   <ContieneFiguritas>
-      {characters.map((character)=>(
-         <Card
-            onClose={() => window.alert('Emulamos que se cierra la card de '+character.name)}
-            key={i++}
-            name={character.name}
-            species={character.species}
-            gender={character.gender}
-            image={character.image}
-           
-
-         />
-      )
-      
-         
-      )}
-           
-
-   </ContieneFiguritas>  
- </ContieneTarjeta>
-   );
+   
 }

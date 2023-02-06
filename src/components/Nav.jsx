@@ -1,18 +1,37 @@
 import SearchBar from './SearchBar';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ContentBuscador=styled.div`
       background-color: limegreen;
       padding: 10px;
       border-radius: 20px;
+      display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
 `;
+
+const Logo=styled.img`
+        width: 210px;
+`
 
 export default function Nav(props){
     const {onSearch}= props;
     
     return(
         <ContentBuscador>
-        <SearchBar onSearch={onSearch}/>
+       
+            <Logo src='https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png' alt='logo'/>
+            <Link to='/home'>Home</Link>
+           
+            <Link to='/about'>about</Link>
+            
+            <Link to='/detail'>Detail</Link>
+        
+        <SearchBar onSearch={onSearch} random={props.random}/>
         </ContentBuscador>
     )
 }
