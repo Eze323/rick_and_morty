@@ -28,8 +28,6 @@ export default function Nav(props){
             <Link to='/home'>Home</Link>
            
             <Link to='/about'>about</Link>
-            
-            <Link to='/detail'>Detail</Link>
         
         <SearchBar onSearch={onSearch} random={props.random}/>
         </ContentBuscador>

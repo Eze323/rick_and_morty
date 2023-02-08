@@ -41,7 +41,7 @@ export default function Card(props) {
  
    return (
       <Figurita>
-         <button onClick={props.onClose(props.id)}>X</button>
+         <button onClick={()=>props.onClose(props.id)}>X</button>
          
          <img  src={props.image} alt={props.name}/> 
          <Link to={`/detail/${props.id}`}>

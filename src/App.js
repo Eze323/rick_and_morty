@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Cards from './components/Cards.jsx'
-/*import Form from './components/Form.jsx';*/
+import Form from './components/Form.jsx';
 import Nav from './components/Nav.jsx'
 import About from './components/About.jsx'
 import Detail from './components/Detail'
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route, useLocation} from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 
 function App () {
@@ -14,6 +14,7 @@ function App () {
   onSearch(randomId);
 }
 
+const location= useLocation();
 function onClose(id){
   // setCharacters(characters.filter((element)=>element.id!==id));
   console.log(id);
@@ -43,12 +44,10 @@ function onClose(id){
     <GlobalStyles/>
 
     <div className='App' style={{ padding: '25px' }}>
-      
-        
-        {/* <Form /> */}
-        <Nav onSearch={onSearch} random={random}/>
+      {location.pathname !=='/' && <Nav onSearch={onSearch} random={random}/> }
 
         <Routes>
+          <Route exact path='/'element={<Form /> } />
           <Route path="/home" element ={     <Cards characters={characters} onClose={onClose}/> } />
           <Route path="/about" element={<About/>} />
           <Route path="/detail/:detailId" element={<Detail />} />
