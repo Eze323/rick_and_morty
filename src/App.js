@@ -16,8 +16,8 @@ function App () {
 
 const location= useLocation();
 function onClose(id){
-  // setCharacters(characters.filter((element)=>element.id!==id));
-  console.log(id);
+   setCharacters(characters.filter((element)=>element.id!==id));
+ /* console.log(id);*/
 }
 
  function onSearch(character) {

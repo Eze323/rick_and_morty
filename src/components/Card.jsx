@@ -19,6 +19,8 @@ box-shadow: 5px 5px 15px 5px #000000;
     float: left;
 }
 & .name{ 
+   overflow: overlay;
+   max-height: 34px;
    position: absolute;
    background-color: rgba(0,0,0,0.5);
    top: 69%;
@@ -28,6 +30,8 @@ box-shadow: 5px 5px 15px 5px #000000;
    padding:5px;
 }
 & .specie{
+   overflow: overlay;
+    max-height: 34px;
    float: left;
     clear: both;
     width: 50%;
