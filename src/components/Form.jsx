@@ -36,7 +36,7 @@ const LoginBox=styled.div`
 
 
 
-export default function Form () {
+export default function Form ({login}) {
   const [userData,setUserData]=useState({
     username:'',password:''
   });
@@ -71,6 +71,7 @@ export default function Form () {
       //alert("Datos completos");
       setUserData();
       setErrors(validate);
+      login(userData);
     } else {
         alert("Debe llenar todos los campos");
       }

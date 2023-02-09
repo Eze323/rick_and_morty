@@ -29,7 +29,7 @@ export default function Nav(props){
            
             <Link to='/about'>about</Link>
         
-        <SearchBar onSearch={onSearch} random={props.random}/>
+        <SearchBar onSearch={onSearch} random={props.random} logout={props.logout}/>
         </ContentBuscador>
     )
 }

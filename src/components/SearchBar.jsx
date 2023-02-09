@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function SearchBar({onSearch,random}) {
+export default function SearchBar({onSearch,random,logout}) {
 
    const [character,setCharacter]=useState('');
 
@@ -24,6 +24,12 @@ export default function SearchBar({onSearch,random}) {
                onClick={()=>random()}
       >
         Agregar random
+      
+      </button> 
+      <button 
+               onClick={()=>logout()}
+      >
+        logout
       
       </button> 
       </div>

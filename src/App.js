@@ -1,13 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Cards from './components/Cards.jsx'
 import Form from './components/Form.jsx';
 import Nav from './components/Nav.jsx'
 import About from './components/About.jsx'
 import Detail from './components/Detail'
-import {Routes,Route, useLocation} from 'react-router-dom'
+import {Routes,Route, useLocation,useNavigate} from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 
 function App () {
+
+  const navigate = useNavigate();
+const [access, setAccess] = useState(false);
+const username = 'a.ezequielirace@gmail.com';
+const password = 'password123';
+
+function login(userData) {
+   if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate('/home');
+   }
+}
+function logout(){
+  setAccess(false);
+  navigate('/');
+}
+
+useEffect(() => {
+  !access && navigate('/');
+}, [access]);
+
  const [characters,setCharacters]=useState([]);
  function random(){  
   let randomId=Math.floor(Math.random()*826);
@@ -41,10 +62,10 @@ function onClose(id){
     <GlobalStyles/>
 
     <div className='App' style={{ padding: '25px' }}>
-      {location.pathname !=='/' && <Nav onSearch={onSearch} random={random}/> }
+      {location.pathname !=='/' && <Nav onSearch={onSearch} random={random} logout={logout}/> }
 
         <Routes>
-          <Route exact path='/'element={<Form /> } />
+          <Route exact path='/'element={<Form  login={login}/> } />
           <Route path="/home" element ={ <Cards characters={characters} onClose={onClose}/> } />
           <Route path="/about" element={<About/>} />
           <Route path="/detail/:detailId" element={<Detail />} />
