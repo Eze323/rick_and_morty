@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { validate } from './validation';
 
 const LoginBox=styled.div`
       background-color: limegreen;
@@ -19,49 +20,30 @@ const LoginBox=styled.div`
     color: white; 
     padding: 5px 10px;
 }
-
 `;
 
 
 
-// eslint-disable-next-line
-const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-
-export function validate(inputs) {
-  let errors={};
-
- if (!regexEmail.test(inputs.email)) {
-    errors.email = 'Debe ser un correo electrónico';
- }
- if (!inputs.password) {
-    errors.password = 'Se requiere un nombre';
- }
-
-  return errors;
-}
-
 export default function Form () {
-  const [inputs, setInputs] = useState({
-    email:'',
-    password:''
-    
+  const [userData,setUserData]=React.useState({
+    username:'',password:''
   });
 
   const [errors, setErrors] = useState({
-    email:'',
+    username:'',
     password:''
   });
 
- const handleChange=(evento)=>{
+ const handleInputChange=(evento)=>{
     setErrors(
       validate({
-         ...inputs,
+         ...userData,
          [evento.target.name]: evento.target.value,
   
       })
    );
-    setInputs({
-      ...inputs,
+    setUserData({
+      ...userData,
       [evento.target.name]: evento.target.value,
    
     })
@@ -73,7 +55,7 @@ export default function Form () {
   let errorArray = Object.values(errors);
     if (errorArray.length === 0) {
       alert("Datos completos");
-      setInputs();
+      setUserData();
       setErrors(validate);
     } else {
         alert("Debe llenar todos los campos");
@@ -90,19 +72,19 @@ export default function Form () {
         type="text"
         name="email"
         placeholder="Escribe tu email..."
-        value={inputs.email}
-        onChange={handleChange}
-        className={errors.email && 'warning'}
+        value={userData.username}
+        onChange={handleInputChange}
+        className={errors.username && 'warning'}
       />
-            {!errors.email? null : <p className='danger'>{errors.email}</p>}
+            {!errors.username? null : <p className='danger'>{errors.username}</p>}
     <br/>
             <label htmlFor="password">Password:</label>
       <input
         type="password"
         name="password"
         placeholder="Escribe tu password..."
-        value={inputs.password}
-        onChange={handleChange}
+        value={userData.password}
+        onChange={handleInputChange}
         className={errors.password && 'warning'}
       />
       {!errors.password ? null : <p className='danger'>{errors.password}</p>}
@@ -112,4 +94,5 @@ export default function Form () {
   </LoginBox>
   )//termina el return
 }
+
 

@@ -17,7 +17,6 @@ function App () {
 const location= useLocation();
 function onClose(id){
    setCharacters(characters.filter((element)=>element.id!==id));
- /* console.log(id);*/
 }
 
  function onSearch(character) {
@@ -35,8 +34,6 @@ function onClose(id){
   }
   
 
-  
-  
 
 
   return (
@@ -48,14 +45,11 @@ function onClose(id){
 
         <Routes>
           <Route exact path='/'element={<Form /> } />
-          <Route path="/home" element ={     <Cards characters={characters} onClose={onClose}/> } />
+          <Route path="/home" element ={ <Cards characters={characters} onClose={onClose}/> } />
           <Route path="/about" element={<About/>} />
           <Route path="/detail/:detailId" element={<Detail />} />
         </Routes>
-    
-      
-      
-
+  
     </div>
     </>
   )
