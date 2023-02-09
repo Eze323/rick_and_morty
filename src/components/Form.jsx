@@ -20,12 +20,24 @@ const LoginBox=styled.div`
     color: white; 
     padding: 5px 10px;
 }
+.warning {
+  border: solid red 1px;
+  border-radius: 0.2em;
+}
+
+.danger {
+  font-size: 10px;
+  color: red;
+  margin-left: 10em;
+}
+
+
 `;
 
 
 
 export default function Form () {
-  const [userData,setUserData]=React.useState({
+  const [userData,setUserData]=useState({
     username:'',password:''
   });
 
@@ -53,8 +65,10 @@ export default function Form () {
   function handleSubmit(event){
     event.preventDefault();
   let errorArray = Object.values(errors);
+  console.log(errorArray);
+
     if (errorArray.length === 0) {
-      alert("Datos completos");
+      //alert("Datos completos");
       setUserData();
       setErrors(validate);
     } else {
@@ -70,15 +84,16 @@ export default function Form () {
       <label htmlFor="email">Correo Electrónico:</label>
       <input
         type="text"
-        name="email"
-        placeholder="Escribe tu email..."
+        name="username"
+        placeholder="Escriba su username..."
         value={userData.username}
         onChange={handleInputChange}
         className={errors.username && 'warning'}
       />
-            {!errors.username? null : <p className='danger'>{errors.username}</p>}
-    <br/>
-            <label htmlFor="password">Password:</label>
+      {!errors.username? null : <p className='danger'>{errors.username}</p>}
+      <br/>
+
+      <label htmlFor="password">Password:</label>
       <input
         type="password"
         name="password"
@@ -89,7 +104,7 @@ export default function Form () {
       />
       {!errors.password ? null : <p className='danger'>{errors.password}</p>}
     <br/>    
-      <button type="submit">Login</button>
+      <button >Login</button>
     </form>
   </LoginBox>
   )//termina el return
