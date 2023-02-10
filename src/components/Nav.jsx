@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const ContentBuscador=styled.div`
-      background-color: limegreen;
-      padding: 10px;
-      border-radius: 20px;
-      display: flex;
+    font-family: 'rym';
+    font-size: 25px;
+    background-color: limegreen;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;

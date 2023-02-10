@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { validate } from './validation';
 
+
+
 const LoginBox=styled.div`
+  font-family: 'rym';
+    font-size: 20px;
       background-color: limegreen;
       width: 30%;
       text-align: center;
@@ -10,8 +14,15 @@ const LoginBox=styled.div`
       margin-top: 15%;
       padding: 20px 50px;
       border-radius: 20px;
-     
+      -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+      box-shadow: 5px 5px 15px 5px #000000; 
+      & .form{
+        font-family: 'rym-regular';
+        font-size: 15px;
+      } 
      & .form input {
+    font-family: 'rym-regular';
+    font-size: 15px;
     width: 200px;
     border: 0; 
     border-bottom: 5px solid white; 
@@ -21,17 +32,18 @@ const LoginBox=styled.div`
     padding: 5px 10px;
 }
 .warning {
+  font-family: 'rym-regular';
+  font-size: 15px;
   border: solid red 1px;
   border-radius: 0.2em;
 }
 
 .danger {
+  font-family: 'rym-regular';
   font-size: 10px;
   color: red;
   margin-left: 10em;
 }
-
-
 `;
 
 
@@ -63,18 +75,17 @@ export default function Form ({login}) {
   }
 
   function handleSubmit(event){
-    event.preventDefault();
-  let errorArray = Object.values(errors);
-  console.log(errorArray);
+          event.preventDefault();
+          login(userData);
+         // let errorArray = Object.values(errors);
+         // console.log(errorArray);
 
-    if (errorArray.length === 0) {
-      //alert("Datos completos");
-      setUserData();
-      setErrors(validate);
-      login(userData);
-    } else {
-        alert("Debe llenar todos los campos");
-      }
+         // if (errorArray.length === 0) {
+            //alert("Datos completos");
+           // setUserData();
+            //setErrors(validate);
+            
+         // } 
     }
   
 

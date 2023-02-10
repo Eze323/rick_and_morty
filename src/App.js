@@ -8,11 +8,17 @@ import {Routes,Route, useLocation,useNavigate} from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 
 function App () {
+/*function fondoDePantalla(){
+  let fondos=['background-01.jpg','background-02.jpg','background-03.jpg','background-04.jpg','background-05.jpg','background-06.jpg'];
+  
+  document.body.style.backgroundImage='url("./images/'+fondos+'")';
 
-  const navigate = useNavigate();
+}*/
+
+const navigate = useNavigate();
 const [access, setAccess] = useState(false);
-const username = 'a.ezequielirace@gmail.com';
-const password = 'password123';
+const username = 'ejemplo@gmail.com';
+const password = '1password';
 
 function login(userData) {
    if (userData.password === password && userData.username === username) {

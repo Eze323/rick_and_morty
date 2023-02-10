@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Figurita=styled.div`
+
+font-size: 10px;
 border:3px solid green;
 position:relative;
 background-color: ghostwhite;
@@ -19,15 +21,19 @@ box-shadow: 5px 5px 15px 5px #000000;
     float: left;
 }
 & .name{ 
-   overflow: overlay;
+   
    max-height: 34px;
    position: absolute;
    background-color: rgba(0,0,0,0.5);
-   top: 69%;
-   left: 30%;
+   top: 75%;
+   left: 50%;
    transform: translate(-50%, -50%);
    color:white;
    padding:5px;
+   max-height: 34px;
+   -webkit-transform: translate(-50%,-50%);
+   -ms-transform: translate(-50%,-50%);
+   width: 94%;
 }
 & .specie{
    overflow: overlay;
@@ -35,10 +41,12 @@ box-shadow: 5px 5px 15px 5px #000000;
    float: left;
     clear: both;
     width: 50%;
+    font-size: 11px;
 }
 & .genero{
    float:right;
-   width:50%
+   width:50%;
+   font-size: 11px;
 }
 `;
 export default function Card(props) {

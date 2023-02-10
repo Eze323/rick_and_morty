@@ -2,21 +2,41 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 body {
-  background-image: url('https://www.denofgeek.com/wp-content/uploads/2020/04/Rick-and-Morty-Zoom-Backgrounds-Garage-1.png?fit=1920%2C1080');
+  background: url('./images/background-01.jpg');
+  /*,url('./images/background-02.jpg'),url('./images/background-03.jpg'),url('./images/background-04.jpg'),url('./images/background-05.jpg'),url('./images/background-06.jpg')*/
+  transition: background-image 1s ease-in-out;
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif;*/
+    font-family: 'rym-regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+&:hover{
+  background: url('./images/background-02.jpg')
+}
+@font-face {
+  font-family:'rym' ;
+  src: url('./font/get_schwifty.ttf');
+  font-style:normal ;
+  font-weight: normal;
+}
+@font-face {
+  font-family:'rym-regular' ;
+  src: url('./font/RockSalt-Regular.ttf');
+  font-style:normal ;
+  font-weight: normal;
+}
 }
 
-code {
+
+
+/*code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+}*/
 .App {
   text-align: center;
 }
