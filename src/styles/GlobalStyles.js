@@ -14,9 +14,7 @@ body {
     font-family: 'rym-regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-&:hover{
-  background: url('./images/background-02.jpg')
-}
+
 @font-face {
   font-family:'rym' ;
   src: url('./font/get_schwifty.ttf');

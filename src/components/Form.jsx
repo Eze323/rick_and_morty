@@ -19,6 +19,9 @@ const LoginBox=styled.div`
       & .form{
         font-family: 'rym-regular';
         font-size: 15px;
+      }
+      & .form label{
+        width: 100%;
       } 
      & .form input {
     font-family: 'rym-regular';
@@ -30,7 +33,11 @@ const LoginBox=styled.div`
     background: #ffffff00; 
     color: white; 
     padding: 5px 10px;
+    border: 2px solid;
+    width: 100%;
+    border-radius: 10px;
 }
+
 .warning {
   font-family: 'rym-regular';
   font-size: 15px;
@@ -45,6 +52,14 @@ const LoginBox=styled.div`
   margin-left: 10em;
 }
 `;
+const BotonEstilo=styled.button`
+    font-family: 'rym-regular';
+
+    padding: 5px;
+    background-color: orange;
+    border-radius: 10px;
+    width: 120px;
+`
 
 
 
@@ -116,7 +131,7 @@ export default function Form ({login}) {
       />
       {!errors.password ? null : <p className='danger'>{errors.password}</p>}
     <br/>    
-      <button >Login</button>
+      <BotonEstilo >Login</BotonEstilo>
     </form>
   </LoginBox>
   )//termina el return

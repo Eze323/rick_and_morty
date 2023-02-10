@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import styled from 'styled-components'
+
+const ContainerDetail = styled.div`
+background-image: url('./images/background-03.jpg');
+transition: 1s ease-in-out 1s;
+`;
+
+
 
 export default function Detail() {
+
   const navigate = useNavigate();
+  
 
   function handleBack() {
     navigate("/home");
   }
 
   const { detailId } = useParams();
-
   const [character, setCharacter] = useState({
       name:'',
       status:'',
@@ -39,7 +48,7 @@ export default function Detail() {
 }, [detailId]);
 
 return (
-  <div>
+  <ContainerDetail>
     <div>
       <h3>Nombre: {character.name}</h3>
       <h5>Status: {character.status}</h5>
@@ -53,6 +62,6 @@ return (
     <div>
       <button onClick={handleBack}>Back to Home</button>
     </div>
-  </div>
+  </ContainerDetail>
 );
 }

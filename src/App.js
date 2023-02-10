@@ -8,18 +8,12 @@ import {Routes,Route, useLocation,useNavigate} from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 
 function App () {
-/*function fondoDePantalla(){
-  let fondos=['background-01.jpg','background-02.jpg','background-03.jpg','background-04.jpg','background-05.jpg','background-06.jpg'];
-  
-  document.body.style.backgroundImage='url("./images/'+fondos+'")';
-
-}*/
 
 const navigate = useNavigate();
 const [access, setAccess] = useState(false);
 const username = 'ejemplo@gmail.com';
 const password = '1password';
-
+let fondos=['background-01.jpg','background-02.jpg','background-03.jpg','background-04.jpg','background-05.jpg','background-06.jpg','background-07.jpg'];
 function login(userData) {
    if (userData.password === password && userData.username === username) {
       setAccess(true);
@@ -33,7 +27,7 @@ function logout(){
 
 useEffect(() => {
   !access && navigate('/');
-}, [access]);
+},[access]);
 
  const [characters,setCharacters]=useState([]);
  function random(){  
@@ -42,6 +36,19 @@ useEffect(() => {
 }
 
 const location= useLocation();
+console.log(location.pathname);
+
+if(location.pathname==='/'){
+  document.body.style.backgroundImage='url("./images/'+fondos[0]+'")';
+}else if(location.pathname==='/home'){
+  document.body.style.backgroundImage='url("./images/'+fondos[1]+'")';
+}else if(location.pathname==='/about'){
+  document.body.style.backgroundImage='url("./images/'+fondos[4]+'")';
+}else if(location.pathname.includes('/detail/')){
+  document.body.style.backgroundImage='url("../images/'+fondos[3]+'")';
+};
+
+
 function onClose(id){
    setCharacters(characters.filter((element)=>element.id!==id));
 }

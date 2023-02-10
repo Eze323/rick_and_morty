@@ -22,30 +22,33 @@ box-shadow: 5px 5px 15px 5px #000000;
 }
 & .name{ 
    
-   max-height: 34px;
-   position: absolute;
-   background-color: rgba(0,0,0,0.5);
-   top: 75%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   color:white;
-   padding:5px;
-   max-height: 34px;
-   -webkit-transform: translate(-50%,-50%);
-   -ms-transform: translate(-50%,-50%);
-   width: 94%;
+   align-items: center;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 74%;
+    left: 50%;
+    color: white;
+    padding: 5px;
+    min-height: 70px;
+    -webkit-transform: translate(-50%,-50%);
+    width: 93%;
+    height: min-content;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 & .specie{
    overflow: overlay;
     max-height: 34px;
    float: left;
     clear: both;
-    width: 50%;
+    width: 100%;
     font-size: 11px;
 }
 & .genero{
    float:right;
-   width:50%;
+   width:30%;
    font-size: 11px;
 }
 `;
@@ -59,8 +62,8 @@ export default function Card(props) {
          <Link to={`/detail/${props.id}`}>
                <h2 class='name'>{props.name}</h2>
          </Link>
-         <h2 class='specie'>{props.species}</h2>
-         <h2 class='genero'>{props.gender}</h2>
+         <h2 class='specie'>{props.species} - {props.gender}</h2>
+         {/* <h2 class='genero'></h2> */}
          
       </Figurita>
    );
