@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Figurita=styled.div`
-
+margin-top: 10px;
 font-size: 10px;
 border:3px solid green;
 position:relative;
 background-color: ghostwhite;
 padding: 5px;
 border-radius: 15px;
--webkit-box-shadow: 5px 5px 15px 5px #000000; 
-box-shadow: 5px 5px 15px 5px #000000;
+-webkit-box-shadow: 5px 5px 15px 1px #000000; 
+box-shadow: 5px 5px 15px 1px #000000;
 & button{
    clear: both;
     float: right;

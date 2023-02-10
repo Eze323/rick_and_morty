@@ -2,7 +2,8 @@ import Card from './Card';
 import styled from 'styled-components';
 
 const ContieneFiguritas=styled.div`
- width: 100%;
+   padding-top: 15px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,6 +14,7 @@ const ContieneFiguritas=styled.div`
 
 `;
 const ContieneTarjeta=styled.div`
+      margin-top: 15px;
       width: 100%;
       display: flex;
       flex-direction: row;

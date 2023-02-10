@@ -1,16 +1,21 @@
-import { useState, useEffect } from 'react'
-import Cards from './components/Cards.jsx'
+import { useState, useEffect } from 'react';
+import Cards from './components/Cards.jsx';
 import Form from './components/Form.jsx';
-import Nav from './components/Nav.jsx'
-import About from './components/About.jsx'
-import Detail from './components/Detail'
-import {Routes,Route, useLocation,useNavigate} from 'react-router-dom'
-import GlobalStyles from './styles/GlobalStyles'
+import Nav from './components/Nav.jsx';
+import About from './components/About.jsx';
+import Detail from './components/Detail';
+import {Routes,Route, useLocation,useNavigate} from 'react-router-dom';
+import GlobalStyles from './styles/GlobalStyles';
 
 function App () {
 
 const navigate = useNavigate();
 const [access, setAccess] = useState(false);
+// eslint-disable-next-line
+useEffect(() => {
+  !access && navigate('/');
+},[access]);
+
 const username = 'ejemplo@gmail.com';
 const password = '1password';
 let fondos=['background-01.jpg','background-02.jpg','background-03.jpg','background-04.jpg','background-05.jpg','background-06.jpg','background-07.jpg'];
@@ -25,9 +30,7 @@ function logout(){
   navigate('/');
 }
 
-useEffect(() => {
-  !access && navigate('/');
-},[access]);
+
 
  const [characters,setCharacters]=useState([]);
  function random(){  

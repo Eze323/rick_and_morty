@@ -1,5 +1,20 @@
 import { useState } from "react";
-export default function SearchBar({onSearch,random,logout}) {
+import styled from "styled-components";
+const BotonBuscar=styled.button`
+font-family: 'rym-regular';
+width:180px!important;
+margin-left:15px;
+padding: 5px;
+background-color: orange;
+border-radius: 10px;
+width: 120px;
+-webkit-box-shadow: 5px 5px 15px 1px #000000; 
+box-shadow: 5px 5px 15px 1px #000000;
+cursor:pointer; 
+`;
+
+export default function SearchBar({onSearch,random}) {
+
 
    const [character,setCharacter]=useState('');
 
@@ -14,24 +29,19 @@ export default function SearchBar({onSearch,random,logout}) {
                placeholder="Buscar Personaje ..."
                onChange={handleChange}
          />
-      <button 
+      <BotonBuscar 
                onClick={()=>onSearch(character)}
       >
         Agregar
       
-      </button> 
-      <button 
+      </BotonBuscar> 
+      <BotonBuscar 
                onClick={()=>random()}
       >
         Agregar random
       
-      </button> 
-      <button 
-               onClick={()=>logout()}
-      >
-        logout
-      
-      </button> 
+      </BotonBuscar> 
+     
       </div>
    );
 }
