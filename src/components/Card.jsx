@@ -18,15 +18,15 @@ box-shadow: 5px 5px 15px 1px #000000;
 }
 
 & .name{ 
-   
+   font-size: 13px;
    align-items: center;
     position: absolute;
     background-color: rgba(0,0,0,0.5);
-    top: 74%;
+    top: 73%;
     left: 50%;
     color: white;
     padding: 5px;
-    min-height: 70px;
+    min-height: 50px;
     -webkit-transform: translate(-50%,-50%);
     width: 93%;
     height: min-content;
@@ -49,7 +49,7 @@ box-shadow: 5px 5px 15px 1px #000000;
    font-size: 11px;
 }
 & .imageCard{
-   width:300px;
+   width:240px;
    clear: both;
    float: left;
 }
