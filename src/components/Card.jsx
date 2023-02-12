@@ -16,10 +16,7 @@ box-shadow: 5px 5px 15px 1px #000000;
     float: right;
     margin: 6px;
 }
-& img{
-   clear: both;
-    float: left;
-}
+
 & .name{ 
    
    align-items: center;
@@ -51,6 +48,11 @@ box-shadow: 5px 5px 15px 1px #000000;
    width:30%;
    font-size: 11px;
 }
+& .imageCard{
+   width:300px;
+   clear: both;
+   float: left;
+}
 `;
 export default function Card(props) {
  
@@ -58,7 +60,7 @@ export default function Card(props) {
       <Figurita>
          <button onClick={()=>props.onClose(props.id)}>X</button>
          
-         <img  src={props.image} alt={props.name}/> 
+         <img class='imageCard'  src={props.image} alt={props.name}/> 
          <Link to={`/detail/${props.id}`}>
                <h2 class='name'>{props.name}</h2>
          </Link>
