@@ -40,6 +40,7 @@ export default function Nav(props){
        
             <Logo src='https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png' alt='logo'/>
             <Link to='/home'>Home</Link>
+            <Link to='/favorites'>Favoritos</Link>
             <Link to='/about'>about</Link>
             
             <SearchBar onSearch={onSearch} random={props.random} />

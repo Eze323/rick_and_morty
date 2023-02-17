@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import styled from 'styled-components'
-
-const ContainerDetail = styled.div`
-background-image: url('./images/background-03.jpg');
-transition: 1s ease-in-out 1s;
-`;
-
 
 
 export default function Detail() {

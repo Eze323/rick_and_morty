@@ -6,6 +6,7 @@ import About from './components/About.jsx';
 import Detail from './components/Detail';
 import {Routes,Route, useLocation,useNavigate} from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
+import { Favorites } from './components/Favorites.jsx';
 
 function App () {
 
@@ -84,6 +85,8 @@ function onClose(id){
           <Route exact path='/'element={<Form  login={login}/> } />
           <Route path="/home" element ={ <Cards characters={characters} onClose={onClose}/> } />
           <Route path="/about" element={<About/>} />
+          <Route path='/favorites' element={<Favorites/>} />
+
           <Route path="/detail/:detailId" element={<Detail />} />
         </Routes>
   
