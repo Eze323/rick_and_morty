@@ -27,8 +27,8 @@ box-shadow: 5px 5px 15px 1px #000000;
    align-items: center;
     position: absolute;
     background-color: rgba(0,0,0,0.5);
-    top: 73%;
-    left: 50%;
+    top: 64%;
+    left: 2%;
     color: white;
     padding: 5px;
     min-height: 50px;
@@ -59,6 +59,12 @@ box-shadow: 5px 5px 15px 1px #000000;
    float: left;
 }
 `;
+const BtnContainer=styled.div`
+display: flex;
+justify-content: space-between;
+
+`
+
 export function Card(props) {
    const [isFav,setIsFav] = useState(false);
    
@@ -91,6 +97,7 @@ export function Card(props) {
 
    return (
       <Figurita>
+         <BtnContainer>
          {
             isFav ? (
                <button onClick={handleFavorite}>❤️</button>
@@ -99,7 +106,7 @@ export function Card(props) {
             )
          }
          <button onClick={()=>props.onClose(props.id)}>X</button>
-         
+         </BtnContainer>
          <img class='imageCard'  src={props.image} alt={props.name}/> 
          <Link to={`/detail/${props.id}`}>
                <h2 class='name'>{props.name}</h2>
