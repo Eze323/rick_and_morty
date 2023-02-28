@@ -6,7 +6,7 @@ import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail';
 import {Routes,Route, useLocation,useNavigate} from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
-import { Favorites } from './components/Favorites/Favorites.jsx';
+import  Favorites  from './components/Favorites/Favorites.jsx';
 
 function App () {
 

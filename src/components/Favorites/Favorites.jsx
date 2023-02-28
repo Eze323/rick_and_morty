@@ -42,18 +42,18 @@ Reset
   <ContieneTarjeta >   
            <ContieneFiguritas>
             
-    {myFavorites.length === 0 ? (
+    {myFavorites.length === 0 ? 
           <p style={{ color: "violet", marginTop: "150px", fontSize: "24px" }}>
             ¡Agrega un favorito!
           </p>
-        ) : (myFavorites.map((fav,i) => {
+         : (myFavorites.map((fav,i) => {
     return(<Card 
         id={fav.id}
         name={fav.name}
         specie={fav.species}
         gender={fav.gender}
         image={fav.image}
-        onClose={false}
+        onClose={fav.onClose}
         fav={true}
         key={i++}
         />)
