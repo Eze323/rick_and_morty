@@ -1,11 +1,12 @@
-import SearchBar from './SearchBar';
+import SearchBar from '../SearchBar/SearchBar.jsx';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const ContentBuscador=styled.div`
     font-family: 'rym';
     font-size: 25px;
-    background-color: limegreen;
+    color:white;
+    background-color:#32cd3299;
     padding: 10px;
     border-radius: 20px;
     display: flex;
@@ -23,8 +24,9 @@ const Logo=styled.img`
 `;
 const BotonLogout=styled.button`
 font-family: 'rym-regular';
+color: white;
 padding: 5px;
-background-color: orange;
+background-color: #a7d529ad;
 border-radius: 10px;
 width: 120px;
 -webkit-box-shadow: 5px 5px 15px 1px #000000; 

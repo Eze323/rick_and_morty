@@ -2,10 +2,11 @@ import { useState } from "react";
 import styled from "styled-components";
 const BotonBuscar=styled.button`
 font-family: 'rym-regular';
+color:whitesmoke;
 width:180px!important;
 margin-left:15px;
 padding: 5px;
-background-color: orange;
+background-color:#a7d529ad;
 border-radius: 10px;
 width: 120px;
 -webkit-box-shadow: 5px 5px 15px 1px #000000; 

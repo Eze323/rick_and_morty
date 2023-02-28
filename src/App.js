@@ -1,24 +1,23 @@
 import { useState, useEffect } from 'react';
-import Cards from './components/Cards.jsx';
-import Form from './components/Form.jsx';
-import Nav from './components/Nav.jsx';
-import About from './components/About.jsx';
-import Detail from './components/Detail';
+import Cards from './components/Cards/Cards.jsx';
+import Form from './components/Form/Form.jsx';
+import Nav from './components/Nav/Nav.jsx';
+import About from './components/About/About.jsx';
+import Detail from './components/Detail/Detail';
 import {Routes,Route, useLocation,useNavigate} from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
-import { Favorites } from './components/Favorites.jsx';
+import { Favorites } from './components/Favorites/Favorites.jsx';
 
 function App () {
 
 const navigate = useNavigate();
 const [access, setAccess] = useState(false);
 // eslint-disable-next-line
-useEffect(() => {
-  !access && navigate('/');
-},[access]);
+useEffect(() => {!access && navigate('/')},[access]);
 
 const username = 'ejemplo@gmail.com';
 const password = '1password';
+
 let fondos=['background-01.jpg','background-02.jpg','background-03.jpg','background-04.jpg','background-05.jpg','background-06.jpg','background-07.jpg'];
 function login(userData) {
    if (userData.password === password && userData.username === username) {
@@ -40,7 +39,7 @@ function logout(){
 }
 
 const location= useLocation();
-console.log(location.pathname);
+//console.log(location.pathname);
 
 if(location.pathname==='/'){
   document.body.style.backgroundImage='url("./images/'+fondos[0]+'")';

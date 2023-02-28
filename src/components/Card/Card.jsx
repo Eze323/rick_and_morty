@@ -2,20 +2,30 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {useState,useEffect} from 'react';
-import {addFav,removeFav} from '../redux/actions';
+import {addFav,removeFav} from '../../redux/actions';
 
 
 
-const Figurita=styled.div`
-margin-top: 10px;
+export const Figurita=styled.div`
+margin-top: 15px;
 font-size: 10px;
-border:3px solid green;
+border:3px solid #03747e;
 position:relative;
-background-color: ghostwhite;
+background-color:#01a6b980;
 padding: 5px;
 border-radius: 15px;
--webkit-box-shadow: 5px 5px 15px 1px #000000; 
-box-shadow: 5px 5px 15px 1px #000000;
+-webkit-box-shadow: 5px 5px 15px 1px #9cc831; 
+box-shadow: 5px 5px 15px 1px #9cc831;
+-webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease-out;
+    transition:all 0.5s ease;
+
+&:hover { -webkit-transform: rotate(-7deg);
+          -moz-transform: rotate(-7deg);
+         transform: rotate(-7deg);
+      }
 & button{
    clear: both;
     float: right;
@@ -27,18 +37,19 @@ box-shadow: 5px 5px 15px 1px #000000;
    align-items: center;
     position: absolute;
     background-color: rgba(0,0,0,0.5);
-    top: 64%;
-    left: 2%;
+    top: 62%;
+    left: 9%;
     color: white;
     padding: 5px;
     min-height: 50px;
-    opacity: 0.5;
-    width: 93%;
+    width: 79%;
     height: min-content;
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    border-radius: 0px 0px 12px 12px;
+
 }
 & .specie{
    overflow: overlay;
@@ -57,7 +68,11 @@ box-shadow: 5px 5px 15px 1px #000000;
    width:240px;
    clear: both;
    float: left;
+   margin: 20px;
+    border: 3px solid #03747e;
+    border-radius: 15px;
 }
+
 `;
 const BtnContainer=styled.div`
 display: flex;
@@ -74,7 +89,7 @@ export function Card(props) {
             setIsFav(true);
          }
       });
-   }, [props.myFavorites]);
+   }, [props.myFavorites,props.id]);
 
    function handleFavorite(){
       if(isFav){

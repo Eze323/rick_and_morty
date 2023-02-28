@@ -5,9 +5,15 @@ import { validate } from './validation';
 
 
 const LoginBox=styled.div`
-  font-family: 'rym';
-    font-size: 20px;
-      background-color: limegreen;
+display: flex;
+flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+ background-color:#32cd3299;
+ font-family: 'rym';
+  font-size: 20px;
       width: 30%;
       text-align: center;
       margin: 0 auto;
@@ -18,45 +24,49 @@ const LoginBox=styled.div`
       box-shadow: 5px 5px 15px 5px #000000; 
       & .form{
         font-family: 'rym-regular';
-        font-size: 15px;
+        font-size: 12px;
       }
       & .form label{
         width: 100%;
       } 
      & .form input {
+      text-align: center;
     font-family: 'rym-regular';
-    font-size: 15px;
+    font-size: 12px;
     width: 200px;
     border: 0; 
     border-bottom: 5px solid white; 
-    font-size: 18px; 
     background: #ffffff00; 
     color: white; 
     padding: 5px 10px;
     border: 2px solid;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
+.good{
+  text-align: center;
+  font-family: 'rym-regular';
+  border-radius: 12px;
+}
 .warning {
+  text-align: center;
   font-family: 'rym-regular';
   font-size: 15px;
   border: solid red 1px;
-  border-radius: 0.2em;
+  border-radius: 15px;
 }
 
 .danger {
   font-family: 'rym-regular';
   font-size: 10px;
   color: red;
-  margin-left: 10em;
 }
 `;
 const BotonEstilo=styled.button`
     font-family: 'rym-regular';
-
     padding: 5px;
-    background-color: orange;
+    background-color: #a7d529ad;
     border-radius: 10px;
     width: 120px;
 `
@@ -108,29 +118,32 @@ export default function Form ({login}) {
     <h2>Inicio de Sesión</h2>
       <form onSubmit={handleSubmit}>
 
-      <label htmlFor="email">Correo Electrónico:</label>
+      <label htmlFor="email">Correo Electrónico:</label><br/>
       <input
         type="text"
         name="username"
         placeholder="Escriba su username..."
         value={userData.username}
         onChange={handleInputChange}
-        className={errors.username && 'warning'}
-      />
-      {!errors.username? null : <p className='danger'>{errors.username}</p>}
-      <br/>
+        className={errors.username? 'warning': 'good'}
 
-      <label htmlFor="password">Password:</label>
+      />
+      <br/>
+      
+      {!errors.username? null : <p className='danger'>{errors.username}</p>}
+      
+      <label htmlFor="password">Password:</label><br/>
       <input
         type="password"
         name="password"
         placeholder="Escribe tu password..."
         value={userData.password}
         onChange={handleInputChange}
-        className={errors.password && 'warning'}
+        className={errors.password?'warning':'good'}
       />
+      <br/>
       {!errors.password ? null : <p className='danger'>{errors.password}</p>}
-    <br/>    
+    
       <BotonEstilo >Login</BotonEstilo>
     </form>
   </LoginBox>
